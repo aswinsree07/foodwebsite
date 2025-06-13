@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FoodieHub</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #fffdf7;
+        color: #333;
+        background-image: url(./food1.jpg);
+        background-size: cover;
+      }
+
+      nav {
+        background-color: transparent;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav h1 {
+        font-size: 24px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 50px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #ffe3db;
+      }
+
+      .hero {
+        /* background-image: url("./food1.jpg"); */
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 1px 1px 8px #000;
+      }
+
+      .hero h2 {
+        font-size: 3rem;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .bestsellers {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .bestsellers h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #ff6f61;
+      }
+
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .product {
+        width: 200px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+
+      .product:hover {
+        transform: scale(1.05);
+      }
+
+      .product img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+      }
+
+      .product p {
+        padding: 15px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #333;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+      .hero {
+        background-size: cover;
+        background-position: center;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .order-btn {
+        background-color: yellow;
+        color: white;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+
+      .order-btn:hover {
+        background-color: #e65347;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 40px 20px 10px;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-box {
+        flex: 1 1 220px;
+        min-width: 200px;
+      }
+
+      .footer-box h4 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #ff6f61;
+      }
+
+      .footer-box p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .footer-box ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-box ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-box ul li a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+      }
+
+      .footer-box ul li a:hover {
+        color: #fff;
+      }
+
+      .social-icons a {
+        margin-right: 10px;
+        display: inline-block;
+      }
+
+      .social-icons img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.2s ease;
+      }
+
+      .social-icons img:hover {
+        transform: scale(1.2);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #444;
+        font-size: 13px;
+        color: #bbb;
+      }
+      .stats-section {
+        background-size: cover;
+        background-color: wheat;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .stats-section h2 {
+        font-size: 2.2rem;
+        color: #ff6f61;
+        margin-bottom: 40px;
+      }
+
+      .stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .stat-box {
+        background-color: #ffffff;
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        width: 200px;
+        transition: transform 0.3s ease;
+      }
+
+      .stat-box:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-box h3 {
+        font-size: 2rem;
+        color: #222;
+        margin-bottom: 10px;
+      }
+
+      .stat-box p {
+        font-size: 1rem;
+        color: #555;
+      }
+      .featured-dish {
+        background-color: wheat;
+        padding: 60px 20px;
+      }
+
+      .dish-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .dish-text {
+        flex: 1 1 400px;
+        text-align: left;
+      }
+
+      .dish-text h2 {
+        font-size: 2.4rem;
+        color: #ff6f61;
+        margin-bottom: 20px;
+      }
+
+      .dish-text p {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .order-now-btn {
+        background-color: #ff6f61;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .order-now-btn:hover {
+        background-color: #e65347;
+      }
+
+      .dish-image {
+        flex: 1 1 300px;
+      }
+
+      .dish-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .subscribe {
+        background-color: grey;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .subscribe h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .subscribe p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+      }
+
+      .subscribe-form {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .subscribe-form input[type="email"] {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 6px;
+        width: 280px;
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .subscribe-form button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #ff6f61;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .subscribe-form button:hover {
+        background-color: #ffeae7;
+      }
+
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .hero h2 {
+          font-size: 2rem;
+        }
+
+        .product {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>FoodieHub</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Bestsellers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h2>Delicious Food Delivered Fast</h2>
+    </div>
+    <div></div>
+    <div class="hero">
+      <a href="#bestsellers" class="order-btn">Order Now</a>
+    </div>
+
+    <section class="bestsellers">
+      <h2>Bestseller Foods</h2>
+      <div class="products">
+        <div class="product">
+          <img
+            src="./chicken-skewers-with-slices-sweet-peppers-dill.jpg"
+            alt="Burger"
+          />
+          <p>Chicken Kebab</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90"
+            alt="Pizza"
+          />
+          <p>Chicken Burger</p>
+        </div>
+        <div class="product">
+          <img
+            src="./sauteed-mushrooms-with-pumpkin-sweet-pepper.jpg"
+            alt="Pasta"
+          />
+          <p>Mushroom Salad</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85"
+            alt="Noodles"
+          />
+          <p>Salad</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-dish">
+      <div class="dish-content">
+        <div class="dish-text">
+          <h2>Sauteed Mushroom</h2>
+          <p>
+            Indulge in our classic Margherita Pizza made with hand-tossed dough,
+            fresh mozzarella, ripe tomatoes, and a touch of basil. Baked to
+            golden perfection!
+          </p>
+          <a href="#order" class="order-now-btn">Order Now</a>
+        </div>
+        <div class="dish-image">
+          <img
+            src="./sauteed-mushrooms-with-pumpkin-sweet-pepper.jpg"
+            alt="Margherita Pizza"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <h2>Our Delicious Journey</h2>
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3>50,000+</h3>
+          <p>Orders Delivered</p>
+        </div>
+        <div class="stat-box">
+          <h3>20,000+</h3>
+          <p>Happy Customers</p>
+        </div>
+        <div class="stat-box">
+          <h3>150+</h3>
+          <p>Food Items</p>
+        </div>
+        <div class="stat-box">
+          <h3>100+</h3>
+          <p>Delivery Partners</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <h2>Subscribe for Delicious Deals 🍽️</h2>
+      <p>
+        Get exclusive offers, menu updates, and discounts delivered to your
+        inbox!
+      </p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-box">
+          <h4>About</h4>
+          <p>
+            FoodieHub delivers your favorite meals fresh and fast. We believe in
+            quality, taste, and timely service.
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Food Delivery</a></li>
+            <li><a href="#">Catering</a></li>
+            <li><a href="#">Meal Subscription</a></li>
+            <li><a href="#">Bulk Orders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-box">
+          <h4>Other</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-box">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+                alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/24/733/733558.png"
+                alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/24/733/733579.png"
+                alt="Twitter"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/24/733/733585.png"
+                alt="WhatsApp"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 FoodieHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
